@@ -1,6 +1,6 @@
 {
   "name": "ktools-r",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "Kazte's utilities tools for react",
   "keywords": [
     "react",
@@ -9,6 +9,10 @@
   ],
   "scripts": {
     "rollup": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kazte/ktools-react"
   },
   "author": "kazte",
   "license": "ISC",
