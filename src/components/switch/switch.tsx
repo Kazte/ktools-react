@@ -2,7 +2,7 @@ import React from 'react';
 import Case from '../case/case';
 import Default from '../default/default';
 
-export interface SwitchProps {
+interface SwitchProps {
   children: React.ReactNode;
 }
 
@@ -25,4 +25,25 @@ export default function Switch({ children }: SwitchProps) {
   });
 
   return matchChild ?? defaultCase ?? null;
+}
+
+Switch.Case = Case;
+Switch.Default = Default;
+
+interface DefaultProps {
+  children: React.ReactNode;
+}
+
+function Default({ children }: DefaultProps) {
+  return <>{children}</>;
+}
+
+interface CaseProps {
+  condition: boolean;
+  children: React.ReactNode;
+}
+
+function Case({ children, condition }: CaseProps) {
+  condition;
+  return <>{children}</>;
 }
