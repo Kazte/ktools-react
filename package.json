@@ -1,14 +1,14 @@
 {
   "name": "ktools-r",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Kazte's utilities tools for react",
   "keywords": [
     "react",
     "component",
     "tools"
   ],
-  "author": "ISC",
-  "license": "Apache-2.0",
+  "author": "kazte",
+  "license": "ISC",
   "repository": "ovieokeh/npm-react-typescript-template",
   "main": "dist/index.js",
   "engines": {
