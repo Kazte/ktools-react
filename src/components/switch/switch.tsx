@@ -1,47 +1,49 @@
-import * as React from 'react'
+import React from 'react';
+import Case from '../case/case';
+import Default from '../default/default';
 
 interface SwitchProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function Switch({ children }: SwitchProps) {
-  let matchChild: React.ReactNode = null
-  let defaultCase: React.ReactNode = null
+  let matchChild: React.ReactNode = null;
+  let defaultCase: React.ReactNode = null;
 
   React.Children.forEach(children, (child: any) => {
     if (!matchChild && child.type == Case) {
-      const { condition } = child.props
+      const { condition } = child.props;
 
-      const conditionResult = Boolean(condition)
+      const conditionResult = Boolean(condition);
 
       if (conditionResult) {
-        matchChild = child
+        matchChild = child;
       }
     } else if (!defaultCase && child.type == Default) {
-      defaultCase = child
+      defaultCase = child;
     }
-  })
+  });
 
-  return matchChild ?? defaultCase ?? null
+  return matchChild ?? defaultCase ?? null;
 }
 
-Switch.Case = Case
-Switch.Default = Default
+Switch.Case = Case;
+Switch.Default = Default;
 
 interface DefaultProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 function Default({ children }: DefaultProps) {
-  return <>{children}</>
+  return <>{children}</>;
 }
 
 interface CaseProps {
-  condition: boolean
-  children: React.ReactNode
+  condition: boolean;
+  children: React.ReactNode;
 }
 
 function Case({ children, condition }: CaseProps) {
-  condition
-  return <>{children}</>
+  condition;
+  return <>{children}</>;
 }
