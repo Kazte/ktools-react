@@ -1,34 +1,93 @@
-# npm-react-typescript-template
+<h1 align='center'>Kazte's react tools</h1>
 
-A template for publishing a React + TypeScript package to npm
+<p align='center'>
+  <a href='https://www.npmjs.com/package/ktools-r'>
+    <img src='https://img.shields.io/npm/v/ktools-r' alt='npm version' />
+  </a>
+  <a href='https://www.npmjs.com/package/ktools-r'>
+    <img src='https://img.shields.io/npm/dt/ktools-r?color=blue&style=flat-square' alt='npm downloads' />
+  </a>
+  <a href='https://www.npmjs.com/package/ktools-r'>
+    <img src='https://img.shields.io/npm/l/ktools-r' alt='license' />
+  </a>
+</p>
 
-## How to use
+<h1>Index</h1>
 
-Fork this repo, clone it to your local computer, and edit the `package.json` along with every other required file to match your project.
-Write the code for your package in TypeScript and Sass, compile it, and publish it to [npm](https://npmjs.com).
+- [Description](#description)
+- [Dependencies](#dependencies)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Switch](#switch)
+- [Loader](#loader)
 
-To compile your code once, run
+## Description
 
-- `npm run build`.
+A collection of react tools that I use in my projects. I decided to make this package to make my life easier and to help other developers. This package is still in development and I will add more tools in the future.
 
-To compile your code once and refresh on file change, run
+I use [tailwindcss](https://www.npmjs.com/package/tailwindcss) in my projects, so I decided to use it in this package too. If you don't use tailwindcss, feel free to open an pull request to add support for other css frameworks.
 
-- `npm run start`.
+## Dependencies
 
-To publish your package to npm, make sure you're logged in the correct account by running
+- [React](https://www.npmjs.com/package/react)
+- [React-dom](https://www.npmjs.com/package/react-dom)
+- [tailwindcss](https://www.npmjs.com/package/tailwindcss)
 
-- `npm login`.
+## Installation
 
-Compile your package by running
+```bash
+npm install ktools-r
+# or
+yarn add ktools-r
+# or
+pnpm add ktools-r
+```
 
-- `npm run build`
+## Usage
 
-Update the package version accordingly by using
+### Switch
 
-- [`npm version [patch | minor | major]`](https://docs.npmjs.com/about-semantic-versioning)
+```tsx
+import { Switch } from 'ktools-r'
 
-Then publish your package by running
+enum APP_STATE {
+  CASE_1,
+  CASE_2,
+  NONE,
+}
 
-- `npm publish`
+function App() {
+  const [appState, setAppState] = useState(APP_STATE.CASE_1)
 
-### Happy Building ♡
+  return (
+    <Switch>
+      <Switch.Case condition={appState === APP_STATE.CASE_1}>
+        <div>
+          <h1>Case 1</h1>
+        </div>
+      </Switch.Case>
+      <Switch.Case condition={appState === APP_STATE.CASE_2}>
+        <div>
+          <h1>Case 2</h1>
+        </div>
+      </Switch.Case>
+
+      {/* ... */}
+      {/* As many cases as you want */}
+      {/* ... */}
+
+      <Switch.Default>
+        <div>
+          <h1>Default</h1>
+        </div>
+      </Switch.Default>
+    </Switch>
+  )
+}
+```
+
+## Loader
+
+```tsx
+
+```
