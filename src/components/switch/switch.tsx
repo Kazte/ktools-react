@@ -1,6 +1,4 @@
 import React from 'react';
-import Case from '../case/case';
-import Default from '../default/default';
 
 interface SwitchProps {
   children: React.ReactNode;
