@@ -1,14 +1,15 @@
 {
   "name": "ktools-r",
-  "version": "0.0.18",
+  "version": "0.0.20",
   "description": "Kazte's utilities tools for react",
+  "main": "dist/index.js",
   "keywords": [
     "react",
     "component",
     "tools"
   ],
   "scripts": {
-    "rollup": "rollup -c"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -16,21 +17,22 @@
   },
   "author": "kazte",
   "license": "ISC",
+  "peerDependencies": {
+    "react": "^18.0.2",
+    "tailwindcss": "^3.0.0"
+  },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^21.0.1",
-    "@rollup/plugin-node-resolve": "^13.0.6",
-    "@rollup/plugin-typescript": "^8.3.3",
-    "@types/react": "^17.0.34",
-    "react": "^17.0.2",
-    "rollup": "^2.60.0",
-    "rollup-plugin-dts": "^4.0.1",
-    "tslib": "^2.6.2",
+    "react": "^18.0.2",
     "typescript": "^4.4.4"
   },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  }
 }
